@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import sys
+
+def solve(grades):
+    # Complete this function
+    temp=0
+    count=0
+    for i in range(len(grades)):
+        count=0
+        if(grades[i]>=38):
+            if(grades[i]%5!=0):
+                temp=grades[i]
+                while(temp%5!=0):
+                    temp+=1
+                    count+=1
+                if(count<3):
+                    grades[i]=temp
+    return grades            
+
+n = int(input().strip())
+grades = []
+grades_i = 0
+for grades_i in range(n):
+   grades_t = int(input().strip())
+   grades.append(grades_t)
+result = solve(grades)
+print ("\n".join(map(str, result)))
+
