@@ -1,6 +1,6 @@
 import sys
 from fractions import gcd
-from functools import reduce, lru_cache
+from functools import lru_cache
 MOD=10**9+7
 @lru_cache(maxsize = None) 
 def fib(n):
@@ -16,10 +16,9 @@ arr_i=[]
 n = int(input().strip())
 for _ in range(n):
     arr_i.append(int(input()))
+    
+print(fib(gcd((min(arr_i)),(max(arr_i)))))
 
-gcd_n=gcd((min(arr_i)),(max(arr_i)))
-print(fib(gcd_n))
-
-
+#gcd of max and min of arr_i is taken as gcd of co-prime number
 # https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
 # METHOD 5 AND 6 ARE USEFUL
