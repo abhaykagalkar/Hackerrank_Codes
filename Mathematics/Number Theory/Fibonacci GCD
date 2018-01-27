@@ -1,0 +1,25 @@
+import sys
+from fractions import gcd
+from functools import reduce, lru_cache
+MOD=10**9+7
+@lru_cache(maxsize = None) 
+def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    if (n & 1) == 1:
+        return (fib(n // 2) * fib(n // 2) + fib(n // 2 + 1) * fib(n // 2 + 1)) % MOD
+    else:
+        return fib(n // 2) * (fib(n // 2) + 2 * fib(n // 2 - 1)) % MOD
+arr_i=[]
+n = int(input().strip())
+for _ in range(n):
+    arr_i.append(int(input()))
+
+gcd_n=gcd((min(arr_i)),(max(arr_i)))
+print(fib(gcd_n))
+
+
+# https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+# METHOD 5 AND 6 ARE USEFUL
