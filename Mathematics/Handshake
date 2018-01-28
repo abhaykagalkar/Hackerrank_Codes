@@ -1,0 +1,29 @@
+#!/bin/python3
+
+import sys
+
+
+T = int(input().strip())
+for a0 in range(T):
+    N = int(input().strip())
+    sum=(N*(N-1))//2
+    print(sum)
+    
+
+
+"""
+With two people (A and B), there is one handshake
+   (A with B).
+
+With three people (A, B, and C), there are three handshakes 
+  (A with B and C;   B with C).
+
+With four people (A, B, C, and D), there are six handshakes 
+  (A with B, C, and D;   B with C and D;   C with D).
+
+In general, with n+1 people, the number of handshakes is the sum of the first n consecutive numbers: 1+2+3+ ... + n.
+
+Since this sum is n(n+1)/2, we need to solve the equation n(n+1)/2 = 66.
+
+This is the quadratic equation n2+ n -132 = 0. Solving for n, we obtain 11 as the answer and deduce that there were 12 people at the party.
+"""
